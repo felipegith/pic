@@ -47,4 +47,20 @@ public class User
 
         return user;
     }
+
+    public static string GetUserType(Type type)
+    {
+        string UserType = string.Empty;
+        switch (type)
+        {
+            case Type.Common:
+                UserType = Type.Common.ToString();
+                break;
+            case Type.Shopkeeper:
+                UserType = Type.Shopkeeper.ToString();
+                break;
+        }
+
+        return UserType;
+    }
 }

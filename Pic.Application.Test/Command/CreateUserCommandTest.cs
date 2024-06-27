@@ -10,12 +10,14 @@ public class CreateUserCommandTest
     
     private static readonly CreateUserCommand Command = new (Fixture.Name, Fixture.Email, Fixture.Document, Fixture.Password, Fixture.Type);
     private readonly IUserRepository _userRepositoryMoq;
+    private readonly IUnitOfWork _uowMoq;
     private readonly CreateUserCommandHandler _handler;
 
     public CreateUserCommandTest()
     {
         _userRepositoryMoq = Substitute.For<IUserRepository>();
-        _handler = new CreateUserCommandHandler(_userRepositoryMoq);
+        _uowMoq = Substitute.For<IUnitOfWork>();
+        _handler = new CreateUserCommandHandler(_userRepositoryMoq, _uowMoq);
     }
     
     [Fact]
