@@ -1,0 +1,17 @@
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Application.deps.json
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Application.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Application.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.AssemblyInfoInputs.cache
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.AssemblyInfo.cs
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.csproj.CoreCompileInputs.cache
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/refint/Pic.Application.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/ref/Pic.Application.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Domain.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Infrastructure.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Domain.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/bin/Debug/net8.0/Pic.Infrastructure.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.csproj.AssemblyReference.cache
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Application/obj/Debug/net8.0/Pic.Application.csproj.CopyComplete

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Pic.Api.props" />
+</Project>

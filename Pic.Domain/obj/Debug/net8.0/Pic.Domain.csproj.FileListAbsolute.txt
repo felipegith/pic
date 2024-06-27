@@ -1,0 +1,11 @@
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/bin/Debug/net8.0/Pic.Domain.deps.json
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/bin/Debug/net8.0/Pic.Domain.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/bin/Debug/net8.0/Pic.Domain.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.AssemblyInfoInputs.cache
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.AssemblyInfo.cs
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.csproj.CoreCompileInputs.cache
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/refint/Pic.Domain.dll
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/Pic.Domain.pdb
+/home/felipe/Área de trabalho/Projetos/picteste/Pic/Pic.Domain/obj/Debug/net8.0/ref/Pic.Domain.dll
