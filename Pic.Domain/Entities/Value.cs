@@ -20,4 +20,22 @@ public class Value
             Balance = balance
         };
     }
+    public void SetBalance(decimal balance)
+    {
+        Balance = balance;
+    }
+    public void SetUserId(Guid userId)
+    {
+        UserId = userId;
+    }
+
+    public bool VerifyBalanceToTransfer(decimal balance, decimal value)
+    {
+        if(balance <= 0)
+        {
+            return false;
+        }
+
+        return balance >= value ? true : false;
+    }
 }

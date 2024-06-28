@@ -2,5 +2,5 @@
 
 namespace Pic.Application;
 
-public record TransferCommand (Domain.Type Type, decimal Value, decimal Payer, decimal Payee) : IRequest<Response>;
+public record TransferCommand (decimal Value, long Payer, decimal Payee) : IRequest<Response>;
 

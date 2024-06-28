@@ -2,5 +2,5 @@
 
 namespace Pic.Application;
 
-public record class CreateUserCommand(string Name, string Email, string Document, string Password, Domain.Type Type) : IRequest<Response>;
+public record class CreateUserCommand(string Name, string Email, long Document, string Password, Domain.Type Type) : IRequest<Response>;
 

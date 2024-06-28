@@ -5,9 +5,10 @@ public class User
     public Guid Id {get; private set;}
     public string Name {get; private set;}
     public string Email {get; private set;}
-    public string Document {get; private set;}
+    public long Document {get; private set;}
     public string Password {get; private set;}
     public Type Type {get; private set;}
+    public Value Value {get; private set;} = new Value();
 
     public void SetName(string name)
     {
@@ -18,7 +19,7 @@ public class User
     {
         Email = email;
     }
-    public void SetDocument(string document)
+    public void SetDocument(long document)
     {
         Document = document;
     }
@@ -27,13 +28,13 @@ public class User
     {
         Password = password;
     }
-
+    
     public void SetType(Type type)
     {
         Type = type;
     }
     
-    public static User Create(string name, string email, string document, string password, Type type)
+    public static User Create(string name, string email, long document, string password, Type type)
     {
         var user = new User
         {
