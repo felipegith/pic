@@ -7,10 +7,10 @@ public static class Fixture
 {
     public static string Name = "Felipe Costa";
     public static string Email = "felipe@mail.com";
-    public static string Document = "23109876654";
+    public static long Document = 23109876654;
     public static string Password = "12345678";
     public static decimal Value = 1000;
-    public static decimal Payer = 4;
+    public static long Payer = 23109876654;
     public static decimal Payee = 15;
     public static Domain.Type Type = Domain.Type.Common;
     public static Domain.Type Shopkeeper = Domain.Type.Shopkeeper;
