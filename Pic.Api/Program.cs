@@ -1,4 +1,5 @@
 using Pic.Application;
+using Pic.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddPresentation();
+builder.Services
+.AddPresentation()
+.AddInfrastructure()
+;
+builder.Services.AddHttpClient<IConsultService, ConsultService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

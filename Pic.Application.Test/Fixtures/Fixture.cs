@@ -1,4 +1,7 @@
-﻿using Microsoft.VisualBasic;
+﻿using System.Net;
+using System.Text;
+using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 using Pic.Domain;
 
 namespace Pic.Application.Test;
@@ -31,5 +34,34 @@ public static class Fixture
         user.Value?.SetBalance(Balance);
         user.Value?.SetUserId(Id);
         return user;
+    }
+
+    public static HttpRequestResponse HttpResponseFailMoq()
+    {
+        return new HttpRequestResponse()
+        {
+            Status = "Fail",
+            Data = new Authorize { Authorization = false }
+        };
+    }
+
+    public static HttpMoq HandleMoq()
+    {
+        return new HttpMoq((request, cancellationToken) =>
+        {
+            var responseMessage = new HttpResponseMessage(HttpStatusCode.Forbidden)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(Fixture.HttpResponseFailMoq()), Encoding.UTF8, "application/json")
+            };
+            return Task.FromResult(responseMessage);
+        });
+    }
+
+    public static HttpClient HttpClientMoq(HttpMessageHandler httpMessageHandler)
+    {
+        return new HttpClient(httpMessageHandler)
+        {
+            BaseAddress = new Uri("https://util.devi.tools/api/v2/authorize")
+        };
     }
 }
