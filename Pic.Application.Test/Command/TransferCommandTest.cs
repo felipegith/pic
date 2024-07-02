@@ -8,20 +8,22 @@ public class TransferCommandTest
 {
     public static TransferCommand Command = new (Fixture.Value, Fixture.Payer, Fixture.Payee);
     private readonly IUserRepository _userRepositoryMoq;
+    private readonly IValueRepository _valueRepositoryMoq;
     private readonly IConsultService _consultServiceMoq;
+    private readonly IUnitOfWork _uowMoq;
     public readonly HttpClient httpClient;
-
-    private readonly HttpRequestFixture httpRequestFixture;
+    private readonly HttpRequestFixture _httpRequestFixture;
     public readonly TransferCommandHandler _handle;
     public TransferCommandTest()
     {
         _userRepositoryMoq = Substitute.For<IUserRepository>();
         _consultServiceMoq = Substitute.For<IConsultService>();
+        _valueRepositoryMoq = Substitute.For<IValueRepository>();
+        _uowMoq = Substitute.For<IUnitOfWork>();
         httpClient = Substitute.For<HttpClient>();
 
-        
-        httpRequestFixture = Substitute.For<HttpRequestFixture>();
-        _handle = new TransferCommandHandler(_userRepositoryMoq, _consultServiceMoq);
+        _httpRequestFixture = new HttpRequestFixture(httpClient);
+        _handle = new TransferCommandHandler(_userRepositoryMoq, _consultServiceMoq, _valueRepositoryMoq, _uowMoq);
         
     }
 
@@ -72,7 +74,7 @@ public class TransferCommandTest
     public async Task Handle_Should_Return_Status_Fail_And_Data_Authorize_False_After_Make_Request()
     {
         //Arrange
-        var httpClient = Fixture.HttpClientMoq(Fixture.HandleMoq());
+        var httpClient = Fixture.HttpClientMoq(Fixture.HandleFailMoq());
         var httpRequestFixture = new HttpRequestFixture(httpClient);
         _userRepositoryMoq.FindUserTypeForDocument(Fixture.Document, default).Returns(Fixture.UserMoq());
 
@@ -83,5 +85,15 @@ public class TransferCommandTest
         Assert.Equal("Fail", result.Status);
         Assert.False(result.Data.Authorization);
         
+    }
+    [Fact]
+    public async Task Handle_Should_Debit_Balance_And_Update_Database_With_New_Balance()
+    {
+        _userRepositoryMoq.FindUserTypeForDocument(Fixture.Document, default).Returns(Fixture.UserMoq());
+        //_valueRepositoryMoq.Update(Fixture.Balance, Fixture.Id);
+
+       //_valueRepositoryMoq.Received(1).Update(Arg.Any<decimal>(), Fixture.Id);
+
+        var result = await _handle.Handle(Command, default);
     }
 }

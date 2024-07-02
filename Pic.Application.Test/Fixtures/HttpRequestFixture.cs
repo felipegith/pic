@@ -2,7 +2,7 @@
 
 namespace Pic.Application.Test;
 
-public class HttpRequestFixture
+ public class HttpRequestFixture 
 {
     private readonly HttpClient _httpClient;
     private readonly string URL = "https://util.devi.tools/api/v2/authorize";

@@ -10,4 +10,5 @@ public static class Fixtures
     public static Guid Id = Guid.NewGuid();
     public static decimal InvalidBalance = -1;
     public static decimal Balance = 1000;
+    public static decimal Value = 800;
 }

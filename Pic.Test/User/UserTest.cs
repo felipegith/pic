@@ -14,12 +14,12 @@ public class UserTest
     public void Should_Create_User_Type_Common_And_Return_Id()
     {
         
-        var create = User.Create(Fixture.Name, Fixture.Email, Fixture.Document, Fixture.Password, Fixture.Type);
+         var create = User.Create(Fixture.Name, Fixture.Email, Fixture.Document, Fixture.Password, Fixture.Type);
 
-        _userRepository.Create(create);
+         _userRepository.Create(create);
 
-        _userRepository.Received(1).Create(create);
-        Assert.NotEqual(create.Id, Guid.Empty);
+         _userRepository.Received(1).Create(create);
+         Assert.NotEqual(create.Id, Guid.Empty);
 
     }
 }

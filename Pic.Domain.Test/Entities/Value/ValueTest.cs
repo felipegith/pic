@@ -20,6 +20,15 @@ public class ValueTest
         //Assert
         Assert.Null(create);
     }
+
+    [Fact]
+    public void Should_Debit_Value_After_Transfer()
+    {
+        var debit = Value.Debit(Fixtures.Balance, Fixtures.Value);
+
+        Assert.IsType<decimal>(debit);
+        Assert.True(debit >= 0);
+    }
 }
 
 

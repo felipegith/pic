@@ -16,7 +16,7 @@ public static class Fixture
     public static decimal Balance = 1000;
     public static decimal Value = 800;
     public static long Payer = 23109876654;
-    public static decimal Payee = 8766542310;
+    public static long Payee = 8766542310;
     public static Domain.Type Type = Domain.Type.Common;
     public static Domain.Type Shopkeeper = Domain.Type.Shopkeeper;
     public static string Success = "User created sucessfully";
@@ -25,7 +25,9 @@ public static class Fixture
 
     public static User UserMoq()
     {
+        
         var user = new User();
+        user.Instance();
         user.SetName(Name);
         user.SetEmail(Email);
         user.SetDocument(Document);
@@ -33,6 +35,7 @@ public static class Fixture
         user.SetType(Type);
         user.Value?.SetBalance(Balance);
         user.Value?.SetUserId(Id);
+        
         return user;
     }
 
@@ -45,13 +48,34 @@ public static class Fixture
         };
     }
 
-    public static HttpMoq HandleMoq()
+    public static HttpRequestResponse HttpResponseSuccessMoq()
+    {
+        return new HttpRequestResponse()
+        {
+            Status = "Success",
+            Data = new Authorize { Authorization = true }
+        };
+    }
+
+    public static HttpMoq HandleSuccessMoq()
+    {
+        return new HttpMoq((request, cancellationToken) =>
+        {
+            var responseMessage = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(HttpResponseSuccessMoq()), Encoding.UTF8, "application/json")
+            };
+            return Task.FromResult(responseMessage);
+        });
+    }
+
+    public static HttpMoq HandleFailMoq()
     {
         return new HttpMoq((request, cancellationToken) =>
         {
             var responseMessage = new HttpResponseMessage(HttpStatusCode.Forbidden)
             {
-                Content = new StringContent(JsonConvert.SerializeObject(Fixture.HttpResponseFailMoq()), Encoding.UTF8, "application/json")
+                Content = new StringContent(JsonConvert.SerializeObject(HttpResponseFailMoq()), Encoding.UTF8, "application/json")
             };
             return Task.FromResult(responseMessage);
         });

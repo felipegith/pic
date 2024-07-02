@@ -4,7 +4,7 @@ public class UserTest
 {
 
     [Fact]
-    public async Task Should_Create_Object_User()
+    public void Should_Create_Object_User()
     {
         var create = User.Create(Fixtures.Name, Fixtures.Email, Fixtures.Document, Fixtures.Password, Fixtures.Type);
 
