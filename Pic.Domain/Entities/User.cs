@@ -1,14 +1,14 @@
 ﻿namespace Pic.Domain;
 
-public class User 
+public class User : Entity
 {
-    public Guid Id {get; private set;}
+    public Guid Id {get; private set;} 
     public string Name {get; private set;}
     public string Email {get; private set;}
     public long Document {get; private set;}
     public string Password {get; private set;}
     public Type Type {get; private set;}
-    public Value Value {get; private set;} = new Value();
+    public Value? Value {get; private set;}
 
     public void SetName(string name)
     {
@@ -45,10 +45,13 @@ public class User
             Password = password,
             Type = type,
         };
-
+        
         return user;
     }
-
+    public void Instance()
+    {
+        Value = new Value();
+    }
     public static string GetUserType(Type type)
     {
         string UserType = string.Empty;

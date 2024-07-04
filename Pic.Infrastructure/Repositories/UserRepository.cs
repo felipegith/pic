@@ -26,7 +26,7 @@ public class UserRepository : IUserRepository
     }
 
     public async Task<User> FindUserTypeForDocument(long document, CancellationToken cancellationToken)
-        => await _context.Users.FirstOrDefaultAsync(x=>x.Document == document);
+        => await _context.Users.Include(x=>x.Value).FirstOrDefaultAsync(x=>x.Document == document);
 
     public async Task<bool> IsUniqueDocument(long document, CancellationToken cancellationToken)
     {
