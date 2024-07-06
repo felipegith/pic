@@ -9,12 +9,14 @@ public class AddBalanceCommandTest
 {
     public static AddBalanceCommand Command = new AddBalanceCommand(1000, Guid.NewGuid());
     private readonly IValueRepository _valueRepository;
+    private readonly IUnitOfWork _uowMoq;
     private readonly AddBalanceCommandHandler _handler;
 
     public AddBalanceCommandTest()
     {
         _valueRepository = Substitute.For<IValueRepository>();
-        _handler = new AddBalanceCommandHandler(_valueRepository);
+        _uowMoq = Substitute.For<IUnitOfWork>();
+        _handler = new AddBalanceCommandHandler(_valueRepository, _uowMoq);
     }
 
     [Fact]

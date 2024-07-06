@@ -23,4 +23,10 @@ public class ValueRepository : IValueRepository
             throw;
         }
     }
+
+    public void Update(Value value)
+    {
+        var getValue = _context.Values.FirstOrDefault(x=>x.UserId == value.UserId);
+        getValue?.SetBalance(value.Balance);
+    }
 }
